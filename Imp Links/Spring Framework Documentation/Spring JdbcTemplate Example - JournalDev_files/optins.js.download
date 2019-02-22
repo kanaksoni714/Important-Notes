@@ -1,0 +1,85 @@
+var div = document.createElement('div');
+div.innerHTML = `
+<!-- Old optin box style -->
+<!--<section class='tp-optin-types' id="jklm-box-two" style='display:none'>
+<div class="pn-mask-tp"></div>
+<div class="confirmation-template-tp">
+  <div class="arrow-up-tp"></div>
+  <div class="confirmation-logo-tp">
+    <img src="` + cdnUrl + `website_icons/` + websiteIcon + `" alt="">
+  </div>
+  <div class="confrimation-body-tp">
+    <p> Hi! stay up to date by allowing this site <br> to send you desktop notifications.</p>
+    <div style='text-align:right'>
+      <button class="btn-allow-tp" onclick="subscribeUserByTwoWayOptIn('hide')">Allow desktop notifications</button>
+      <button class="btn-later-tp" onclick="HideOptin('close')">Not now</button>
+    </div>
+    <div class='jklm-powered'><a target="_blank" href='https://app.truepush.com'>Powered by TruePush</a></div>
+  </div>
+  </div>
+</section>
+-->
+<!-- Top bar optin -->
+<section class="tp-optin-types" id="jklm-top_bar">
+  <div class="topbar">
+    <p>
+      <span> To get updates just for you </span>
+      <button onclick="subscribeUserByTwoWayOptIn('hide')" class="optin-subscribe">Subscribe to push notification</button>
+      <button onclick="HideOptin('close')" class="optin-close">&times;</button>
+    </p>
+  </div>
+</section>
+
+<!-- Bell optin -->
+<section class="tp-optin-types" id="jklm-bell" title="Click to subscribe!">
+  <button class="optin-bell" onclick="subscribeUserByTwoWayOptIn('hide')">
+    <img src="` + host + `assets/images/bell.png" >
+  </button>
+</section>
+
+<!-- Box type optin -->
+<section class='tp-optin-types' id="jklm-box" style='display:none'>
+  <div class="tp-mask"></div>
+  <div class="optin-box2">
+    <h5>Allow updates from ` + websiteURL + `</h5>
+    <p class="turn-off">Get relevant updates just for you.</p>
+    <div>
+      <button class="not-now" onclick="HideOptin('close')" >Not now</button>
+      <button class="allow" onclick="subscribeUserByTwoWayOptIn('hide')" >Allow</button>
+      <p class="poweredby">Powered by <a style="text-decoration:none;color:inherit" target="_blank" href='https://truepush.com'>truepush</a></p>
+    </div>
+  </div>
+ </section>
+
+`
+document.body.appendChild(div);
+
+function subscribeUserByTwoWayOptIn(status) {
+  SendVisitRequest({
+    optinClick: !0
+  });
+  console.log("status is ", status);
+  if (status)
+    HideOptin()
+  subscribeUser()
+}
+
+function ShowOptin() {
+  if (optinType === 'top_bar') {
+    document.body.className += ' ' + 'top-class'
+  }
+  document.getElementById("jklm-" + optinType).style.display = "block"
+}
+
+function HideOptin(type) {
+  if (type == "close") {
+    SendVisitRequest({
+      optinIgnore: !0
+    })
+  }
+  if (optinType === 'top_bar') {
+    document.body.className = document.body.className.replace("top-class", "")
+  }
+
+  document.getElementById("jklm-" + optinType).style.display = "none"
+}

@@ -1,0 +1,25 @@
+Assignment:-
+
+1.      Bean Definition
+
+2.      Bean Scopes
+
+3.      Bean Life Cycle
+
+4.      Bean PostProcessor
+
+5.      Bean Definition Inheritance
+
+6.      Dependency Injection
+
+7.      Injecting Inner Beans
+
+8.      Injecting Collection
+
+9.      Injecting Properties File
+
+10.   Bean Auto-Wiring
+
+11.   Annotation Based Configuration
+
+12.   Java Based Configuration

@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://www.journaldev.com/17053/spring-jdbctemplate-example -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./Spring JdbcTemplate Example - JournalDev_files/analytics.js.download"></script><script async="" src="./Spring JdbcTemplate Example - JournalDev_files/tag.js.download"></script><script async="" src="./Spring JdbcTemplate Example - JournalDev_files/apstag.js.download"></script><script type="text/javascript">!function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");</script><script type="text/javascript" async="" src="./Spring JdbcTemplate Example - JournalDev_files/prebid_v1.js.download"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spring JdbcTemplate Example - JournalDev</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Spring JdbcTemplate Example, Spring JdbcTemplate Tutorial, Spring JdbcTemplate example using annotations, jdbcTemplate.query, update, spring jdbc maven code">
+<link rel="canonical" href="https://www.journaldev.com/17053/spring-jdbctemplate-example">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring JdbcTemplate Example - JournalDev">
+<meta property="og:description" content="Spring JdbcTemplate Example, Spring JdbcTemplate Tutorial, Spring JdbcTemplate example using annotations, jdbcTemplate.query, update, spring jdbc maven code">
+<meta property="og:url" content="https://www.journaldev.com/17053/spring-jdbctemplate-example">
+<meta property="og:site_name" content="JournalDev">
+<meta property="article:author" content="https://www.facebook.com/PankajKumarJaiswal">
+<meta property="article:section" content="Spring">
+<meta property="article:published_time" content="2017-11-18T07:38:55+00:00">
+<meta property="og:image" content="https://www.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example-Project.png">
+<meta property="og:image:secure_url" content="https://www.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example-Project.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Spring JdbcTemplate Example, Spring JdbcTemplate Tutorial, Spring JdbcTemplate example using annotations, jdbcTemplate.query, update, spring jdbc maven code">
+<meta name="twitter:title" content="Spring JdbcTemplate Example - JournalDev">
+<meta name="twitter:image" content="https://www.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example-Project.png">
+<meta name="twitter:creator" content="@JournalDev">
+<script async="" type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/gpt.js.download"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","url":"https://www.journaldev.com/","sameAs":[],"@id":"#person","name":"Pankaj Kumar"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.journaldev.com/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.journaldev.com/spring","name":"Spring"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.journaldev.com/17053/spring-jdbctemplate-example","name":"Spring JdbcTemplate Example"}}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="JournalDev » Feed" href="https://www.journaldev.com/feed">
+<link rel="alternate" type="application/rss+xml" title="JournalDev » Comments Feed" href="https://www.journaldev.com/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="JournalDev » Spring JdbcTemplate Example Comments Feed" href="https://www.journaldev.com/17053/spring-jdbctemplate-example/feed">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cdn.journaldev.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Spring JdbcTemplate Example - JournalDev_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="news-pro-theme-css" href="./Spring JdbcTemplate Example - JournalDev_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="toc-screen-css" href="./Spring JdbcTemplate Example - JournalDev_files/screen.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Spring JdbcTemplate Example - JournalDev_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-fonts-css" href="./Spring JdbcTemplate Example - JournalDev_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="wpdreams-asl-basic-css" href="./Spring JdbcTemplate Example - JournalDev_files/style.basic.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpdreams-ajaxsearchlite-css" href="./Spring JdbcTemplate Example - JournalDev_files/style-simple-red.css" type="text/css" media="all">
+<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/jquery-migrate.min.js.download"></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://cdn.journaldev.com/wp-content/themes/genesis/lib/js/html5shiv.min.js'></script>
+<![endif]-->
+<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/responsive-menu.js.download"></script>
+<link rel="https://api.w.org/" href="https://www.journaldev.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.journaldev.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.journaldev.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.9">
+<link rel="shortlink" href="https://www.journaldev.com/?p=17053">
+<link rel="alternate" type="application/json+oembed" href="https://www.journaldev.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.journaldev.com%2F17053%2Fspring-jdbctemplate-example">
+<link rel="alternate" type="text/xml+oembed" href="https://www.journaldev.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.journaldev.com%2F17053%2Fspring-jdbctemplate-example&amp;format=xml">
+
+<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/2273.js.download"></script><style type="text/css">.waldo-sticky-footer{position: fixed; width: 100%; bottom: 0px; left: 0px; text-align: center; z-index: 9995;}.waldo-sticky-footer iframe {margin-left: auto;margin-right: auto;}.waldo-sticky-sidebar{position: fixed; width: 100%; top: 10px;z-index: 90}.waldo-overlay{position: fixed;height: 100%;width: 100%;top: 0;left: 0;z-index: 105;background: rgba(0,0,0,0.7);}#waldo-counter {position: absolute;bottom: 0;right: 0;color: #fff;font-size: 30px;padding: 15px;}.waldo-bfleft {position: fixed; left: 0; top: 10px;z-index:101;}.waldo-bfright {position: fixed; right: 0; top: 10px;z-index:101;}#waldo-close-button a {border: 1px solid rgba(0,0,0,.35);padding: 3px;font-size: 12px;color: #fff;font-weight: bold;background-color: #777;}</style><script type="text/javascript">googletag.cmd.push(function() {gptAdSlots[2280] = googletag.defineSlot('/124067137/journaldev728x90FL_1', [[728, 90], [320, 50]], 'waldo-tag-2280').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[728, 90]]).addSize([768, 0], [[320, 50]]).addSize([0, 0], [[320, 50]]).build()).addService(googletag.pubads()).setCollapseEmptyDiv(true,true);gptAdSlots[3018] = googletag.defineSlot('/8491498/journaldev728x90FL_1_Universal_Passback_5bc80841e910f', [[728, 90], [320, 50]], 'waldo-tag-3018').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[728, 90]]).addSize([768, 0], [[320, 50]]).addSize([0, 0], [[320, 50]]).build()).addService(googletag.pubads());gptAdSlots[2281] = googletag.defineSlot('/124067137/journaldev728x90FL_2', [[728, 90], [970, 90], [970, 250], [320, 50]], 'waldo-tag-2281').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[728, 90], [970, 90], [970, 250]]).addSize([768, 0], [[320, 50]]).addSize([0, 0], [[320, 50]]).build()).addService(googletag.pubads()).setCollapseEmptyDiv(true,true);gptAdSlots[3019] = googletag.defineSlot('/8491498/journaldev728x90FL_2_Universal_Passback_5bc80844d6c1b', [[728, 90], [320, 50]], 'waldo-tag-3019').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[728, 90]]).addSize([768, 0], [[320, 50]]).addSize([0, 0], [[320, 50]]).build()).addService(googletag.pubads());gptAdSlots[2282] = googletag.defineSlot('/124067137/journaldev300x250FL_1', [[300, 250], [300, 600], [160, 600]], 'waldo-tag-2282').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[300, 250], [300, 600], [160, 600]]).addSize([768, 0], [[300, 250], [300, 600], [160, 600]]).addSize([0, 0], [[300, 250], [300, 600], [160, 600]]).build()).addService(googletag.pubads()).setCollapseEmptyDiv(true,true);gptAdSlots[3020] = googletag.defineSlot('/8491498/journaldev300x250FL_1_Universal_Passback_5bc80847aa4d0', [[300, 250], [160, 600]], 'waldo-tag-3020').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[300, 250]]).addSize([768, 0], [[160, 600]]).addSize([0, 0], [[160, 600]]).build()).addService(googletag.pubads());gptAdSlots[2283] = googletag.defineSlot('/124067137/journaldev300x250FL_2', [[300, 250], [300, 600], [160, 600]], 'waldo-tag-2283').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[300, 250], [300, 600], [160, 600]]).addSize([768, 0], [[300, 250], [300, 600], [160, 600]]).addSize([0, 0], [[300, 250], [300, 600], [160, 600]]).build()).addService(googletag.pubads()).setCollapseEmptyDiv(true,true);gptAdSlots[3021] = googletag.defineSlot('/8491498/journaldev300x250FL_2_Universal_Passback_5bc8084a91584', [[300, 250], [160, 600]], 'waldo-tag-3021').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[300, 250]]).addSize([768, 0], [[160, 600]]).addSize([0, 0], [[160, 600]]).build()).addService(googletag.pubads());gptAdSlots[2397] = googletag.defineSlot('/124067137/journaldev728x90FS_1', [[728, 90], [300, 250], [320, 50]], 'waldo-tag-2397').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[728, 90], [300, 250]]).addSize([768, 0], [[300, 250], [320, 50]]).addSize([0, 0], [[320, 50]]).build()).addService(googletag.pubads()).setCollapseEmptyDiv(true,true);gptAdSlots[3069] = googletag.defineSlot('/8491498/journaldev728x90FS_1_Universal_Passback_5bc808c67e3e0', [[728, 90], [320, 50]], 'waldo-tag-3069').defineSizeMapping(googletag.sizeMapping().addSize([1024, 0], [[728, 90]]).addSize([768, 0], [[320, 50]]).addSize([0, 0], [[320, 50]]).build()).addService(googletag.pubads());googletag.pubads().enableSingleRequest();googletag.enableServices();googletag.pubads().addEventListener('impressionViewable', function(event) {hb_refresh(event); hb_sroll_pause(event);});googletag.pubads().addEventListener('slotRenderEnded', function(event) {waldoAddCloseBtn(event); waldoPassbackInit(event);waldoInterstitialInit(event);})});</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(51990182, "init", {
+        id:51990182,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/51990182" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- 
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/8491498/journaldev_video', [[300, 291], [630, 430]], 'div-gpt-ad-1539114023134-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script>
+--><style type="text/css">.site-title a { background: url(https://cdn.journaldev.com/wp-content/uploads/2018/07/logo1.svg) no-repeat !important; }</style>
+                <link href="./Spring JdbcTemplate Example - JournalDev_files/css(1)" rel="stylesheet" type="text/css">
+                                <style type="text/css">
+                    <!--
+                    
+            @font-face {
+                font-family: 'aslsicons2';
+                src: url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot');
+                src: url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.eot?#iefix') format('embedded-opentype'),
+                     url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff2') format('woff2'),
+                     url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.woff') format('woff'),
+                     url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.ttf') format('truetype'),
+                     url('https://cdn.journaldev.com/wp-content/plugins/ajax-search-lite/css/fonts/icons2.svg#icons') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+            div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label {
+                font-size: 0px !important;
+                color: rgba(0, 0, 0, 0);
+            }
+            div[id*='ajaxsearchlitesettings'].searchsettings .asl_option_inner label:after {
+                font-size: 11px !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            div[id*='ajaxsearchlite'].wpdreams_asl_container {
+                width: 100%;
+                margin: 0px 0px 0px 0px;
+            }
+            div[id*='ajaxsearchliteres'].wpdreams_asl_results div.resdrg span.highlighted {
+                font-weight: bold;
+                color: rgba(217, 49, 43, 1);
+                background-color: rgba(238, 238, 238, 1);
+            }
+            div[id*='ajaxsearchliteres'].wpdreams_asl_results .results div.asl_image {
+                width: 70px;
+                height: 70px;
+            }
+            div.asl_r .results {
+                max-height: none;
+            }
+                                -->
+                </style>
+                            <script type="text/javascript">
+                if ( typeof _ASL !== "undefined" && _ASL !== null && typeof _ASL.initialize !== "undefined" )
+                    _ASL.initialize();
+            </script>
+            <link rel="icon" href="https://cdn.journaldev.com/wp-content/uploads/2018/12/cropped-512x512-transparent-32x32.png" sizes="32x32">
+<link rel="icon" href="https://cdn.journaldev.com/wp-content/uploads/2018/12/cropped-512x512-transparent-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://cdn.journaldev.com/wp-content/uploads/2018/12/cropped-512x512-transparent-180x180.png">
+<meta name="msapplication-TileImage" content="https://cdn.journaldev.com/wp-content/uploads/2018/12/cropped-512x512-transparent-270x270.png">
+		<style type="text/css" id="wp-custom-css">
+			.scriptlesssocialsharing{box-sizing:border-box;margin:18px auto}
+.scriptlesssocialsharing-buttons{border-collapse:separate;border-spacing:3px;display:table;table-layout:fixed;width:100%}
+.scriptlesssocialsharing-buttons a.button{border:none;border-radius:0;color:white;display:table-cell;text-align:center;text-decoration:none;padding:9px}
+.scriptlesssocialsharing-buttons a.button:hover{color:#fff}
+.scriptlesssocialsharing-buttons .sss-name{position:inherit;clip:rect(1px, 1px, 1px, 1px);height:1px;width:1px;border:0;overflow:hidden;word-wrap:break-word}
+.scriptlesssocialsharing-buttons .button.email{background-color:#333;background-color:rgba(51,51,51,0.8)}.scriptlesssocialsharing-buttons .button.email:hover{background-color:#333}
+.scriptlesssocialsharing-buttons .button.twitter{background-color:#55acee;background-color:rgba(85,172,238,0.8)}.scriptlesssocialsharing-buttons .button.twitter:hover{background-color:#55acee}
+.scriptlesssocialsharing-buttons .button.facebook{background-color:#3b5998;background-color:rgba(59,89,152,0.8)}.scriptlesssocialsharing-buttons .button.facebook:hover{background-color:#3b5998}
+.scriptlesssocialsharing-buttons .button.linkedin{background-color:#0077b5;background-color:rgba(0,119,181,0.8)}.scriptlesssocialsharing-buttons .button.linkedin:hover{background-color:#0077b5}
+.scriptlesssocialsharing-buttons .button.google{background-color:#dc4e41;background-color:rgba(220,78,65,0.8)}.scriptlesssocialsharing-buttons .button.google:hover{background-color:#dc4e41}
+.scriptlesssocialsharing-buttons .button.pinterest {background-color: #bd081c;background-color: rgba(189, 8, 28, .8)}
+.scriptlesssocialsharing-buttons .button.pinterest:hover {background-color: #bd081c}  
+.scriptlesssocialsharing-buttons .button.reddit {background-color: #ff4500;background-color: rgba(255, 69, 0, .8)}
+.scriptlesssocialsharing-buttons .button.reddit:hover {background-color: #ff4500}
+@media print {.scriptlesssocialsharing {display: none}}		</style>
+	<script type="text/javascript" async="" src="./Spring JdbcTemplate Example - JournalDev_files/a.min.js.download"></script><script src="./Spring JdbcTemplate Example - JournalDev_files/app.js.download"></script><script type="text/javascript" async="" src="./Spring JdbcTemplate Example - JournalDev_files/a.min.js(1).download"></script><link type="text/css" rel="stylesheet" href="./Spring JdbcTemplate Example - JournalDev_files/optins.css"><script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/browser-check.js.download"></script><script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/http.js.download"></script><script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/common-functions.js.download"></script><script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/optins.js.download"></script></head>
+<body class="post-template-default single single-post postid-17053 single-format-standard custom-header header-image content-sidebar" itemscope="" itemtype="https://schema.org/WebPage"><div class="site-container"><header class="site-header" itemscope="" itemtype="https://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a href="https://www.journaldev.com/">JournalDev</a></p><p class="site-description" itemprop="description">Java, Java EE, Android, Python, Web Development Tutorials</p></div><div class="widget-area header-widget-area">
+<!-- Quick Adsense Wordpress Plugin: http://quickadsense.com/ -->
+<section id="adswidget8-quick-adsense-3" class="widget widget_adswidget8-quick-adsense"><div class="widget-wrap"><!-- 728x90/320x50 -->
+<div id="waldo-tag-2280" data-processed="true"><script type="text/javascript">googletag.cmd.push(function() { googletag.display('waldo-tag-2280'); });</script></div></div></section>
+</div></div></header><nav class="nav-primary" aria-label="Main" itemscope="" itemtype="https://schema.org/SiteNavigationElement"><div class="wrap"><div class="responsive-menu-icon"></div><ul id="menu-new-headermenu" class="menu genesis-nav-menu menu-primary responsive-menu"><li id="menu-item-17036" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17036"><a href="https://www.journaldev.com/java-tutorial-java-ee-tutorials" itemprop="url"><span itemprop="name">Java Tutorial</span></a></li>
+<li id="menu-item-7611" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7611"><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#" itemprop="url"><span itemprop="name">#Index Posts</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-7612" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7612"><a href="https://www.journaldev.com/7153/core-java-tutorial" itemprop="url"><span itemprop="name">Core Java Tutorial</span></a></li>
+	<li id="menu-item-7613" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7613"><a href="https://www.journaldev.com/1827/java-design-patterns-example-tutorial" itemprop="url"><span itemprop="name">Java Design Patterns</span></a></li>
+	<li id="menu-item-7614" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7614"><a href="https://www.journaldev.com/2114/servlet-jsp-tutorial" itemprop="url"><span itemprop="name">Servlet JSP Tutorial</span></a></li>
+	<li id="menu-item-7615" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7615"><a href="https://www.journaldev.com/2310/struts2-tutorial-with-example-projects" itemprop="url"><span itemprop="name">Struts 2 Tutorial</span></a></li>
+	<li id="menu-item-7616" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7616"><a href="https://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial" itemprop="url"><span itemprop="name">Spring Tutorial</span></a></li>
+	<li id="menu-item-7638" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7638"><a href="https://www.journaldev.com/7635/jsf-tutorial" itemprop="url"><span itemprop="name">JSF Tutorial</span></a></li>
+	<li id="menu-item-7620" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7620"><a href="https://www.journaldev.com/5516/primefaces-tutorial-with-example-projects" itemprop="url"><span itemprop="name">Primefaces Tutorial</span></a></li>
+	<li id="menu-item-7619" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7619"><a href="https://www.journaldev.com/2681/jdbc-tutorial" itemprop="url"><span itemprop="name">JDBC Tutorial</span></a></li>
+	<li id="menu-item-7617" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7617"><a href="https://www.journaldev.com/3793/hibernate-tutorial" itemprop="url"><span itemprop="name">Hibernate Tutorial</span></a></li>
+	<li id="menu-item-7618" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7618"><a href="https://www.journaldev.com/6672/mongodb-tutorial-installation-example-projects-integration-with-servlet-spring-jsf" itemprop="url"><span itemprop="name">MongoDB Tutorial</span></a></li>
+</ul>
+</li>
+<li id="menu-item-7621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7621"><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#" itemprop="url"><span itemprop="name">#Interview Questions</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-7622" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7622"><a href="https://www.journaldev.com/java-interview-questions" itemprop="url"><span itemprop="name">Java Interview Questions</span></a></li>
+	<li id="menu-item-23747" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23747"><a href="https://www.journaldev.com/2366/core-java-interview-questions-and-answers" itemprop="url"><span itemprop="name">Core Java Interview Questions</span></a></li>
+	<li id="menu-item-7623" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7623"><a href="https://www.journaldev.com/2529/jdbc-interview-questions-and-answers" itemprop="url"><span itemprop="name">JDBC Interview Questions</span></a></li>
+	<li id="menu-item-7624" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7624"><a href="https://www.journaldev.com/2015/servlet-interview-questions-and-answers" itemprop="url"><span itemprop="name">Servlet Interview Questions</span></a></li>
+	<li id="menu-item-7625" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7625"><a href="https://www.journaldev.com/2110/jsp-interview-questions-and-answers" itemprop="url"><span itemprop="name">JSP Interview Questions</span></a></li>
+	<li id="menu-item-7626" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7626"><a href="https://www.journaldev.com/2354/struts2-interview-questions-and-answers" itemprop="url"><span itemprop="name">Struts2 Interview Questions</span></a></li>
+	<li id="menu-item-7627" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7627"><a href="https://www.journaldev.com/2696/spring-interview-questions-and-answers" itemprop="url"><span itemprop="name">Spring Interview Questions</span></a></li>
+	<li id="menu-item-7628" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7628"><a href="https://www.journaldev.com/3633/hibernate-interview-questions-and-answers" itemprop="url"><span itemprop="name">Hibernate Interview Questions</span></a></li>
+	<li id="menu-item-7629" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7629"><a href="https://www.journaldev.com/7261/jsf-interview-questions-and-answers" itemprop="url"><span itemprop="name">JSF Interview Questions</span></a></li>
+</ul>
+</li>
+<li id="menu-item-17037" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17037"><a href="https://www.journaldev.com/resources" itemprop="url"><span itemprop="name">Resources</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><div class="breadcrumb" itemtype="https://schema.org/BreadcrumbList">	You are here:
+<span><span><a href="https://www.journaldev.com/">Home</a> » <span><a href="https://www.journaldev.com/spring">Spring</a> » <span class="breadcrumb_last">Spring JdbcTemplate Example</span></span></span></span></div><article class="post-17053 post type-post status-publish format-standard category-spring entry" itemscope="" itemtype="https://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">Spring JdbcTemplate Example</h1>
+<p class="entry-meta"><span class="entry-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><a href="https://www.journaldev.com/author/pankaj" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Pankaj</span></a></span> <span class="entry-comments-link"><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comments">5 Comments</a></span> </p></header><div class="entry-content" itemprop="text"><!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div data-type="ad" data-publisher="journaldev.com" data-zone="jd_after_entry_728x90" data-format="728x90"> </div>
+</div>
+<p>Spring JdbcTemplate is the most important class in <a href="https://www.journaldev.com/2593/spring-jdbc-example" rel="noopener" target="_blank">Spring JDBC</a> package. </p>
+<div id="toc_container" class="toc_light_blue no_bullets"><p class="toc_title">Table of Contents <span class="toc_toggle">[<a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#">hide</a>]</span></p><ul class="toc_list"><li><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#spring-jdbctemplate"><span class="toc_number toc_depth_1">1</span> Spring JdbcTemplate</a><ul><li><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#spring-jdbctemplate-example"><span class="toc_number toc_depth_2">1.1</span> Spring JdbcTemplate Example</a></li><li><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#spring-jdbc-maven-dependencies"><span class="toc_number toc_depth_2">1.2</span> Spring JDBC Maven Dependencies</a></li><li><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#spring-datasource-configuration"><span class="toc_number toc_depth_2">1.3</span> Spring DataSource Configuration</a></li><li><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#spring-jdbc-model-classes"><span class="toc_number toc_depth_2">1.4</span> Spring JDBC Model Classes</a></li><li><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#spring-jdbc-dao-classes"><span class="toc_number toc_depth_2">1.5</span> Spring JDBC DAO Classes</a></li><li><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#spring-jdbctemplate-test-program"><span class="toc_number toc_depth_2">1.6</span> Spring JdbcTemplate Test Program</a></li></ul></li></ul></div>
+<h2><span id="spring-jdbctemplate">Spring JdbcTemplate</span></h2>
+<ul>
+<li>JDBC produces a lot of boiler plate code, such as opening/closing a connection to a database, handling sql exceptions etc. It makes the code extremely cumbersome and difficult to read.</li>
+<li>Implementing JDBC in the <a href="https://www.journaldev.com/16922/spring-framework" rel="noopener" target="_blank">Spring Framework</a> takes care of working with many low-level operations (opening/closing connections, executing SQL queries, etc.).</li>
+<li>Thanks to this, when working with the database in the <a href="https://www.journaldev.com/16922/spring-framework">Spring Framework</a>, we only need to define the connection parameters from the database and register the SQL query, the rest of the work for us is performed by Spring.</li>
+<li>JDBC in Spring has several classes (several approaches) for interacting with the database. The most common of these is using the <code>JdbcTemplate</code> class. This is the base class that manages the processing of all events and database connections.</li>
+<li>The JdbcTemplate class executes SQL queries, iterates over the <code>ResultSet</code>, and retrieves the called values, updates the instructions and procedure calls, “catches” the exceptions, and translates them into the exceptions defined in the <code>org.springframwork.dao</code> package.</li>
+<li>Instances of the JdbcTemplate class are thread-safe. This means that by configuring a single instance of the JdbcTemplate class, we can then use it for several <a href="https://www.journaldev.com/16813/dao-design-pattern" rel="noopener" target="_blank">DAO</a> objects.</li>
+<li>When using JdbcTemplate, most often, it is configured in the Spring configuration file. After that, it is implemented using bean in DAO classes.</li>
+</ul>
+<h3><span id="spring-jdbctemplate-example">Spring JdbcTemplate Example</span></h3>
+<p>Let’s look at Spring JdbcTemplate example program. I am using Postgresql database here, but you can use any other relational database too, such as MySQL and Oracle. All you need is to change the database configurations and it should work.</p>
+<p>First of all we need some sample data to work on. Below SQL queries will create a table and populate it with some data for us to use.</p>
+<pre style="display: block;"><code class="hljs sql"><div class="re_clip-board">Copy</div>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> people (
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">serial</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> primary <span class="hljs-keyword">key</span>,
+first_name <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+last_name <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+age <span class="hljs-built_in">integer</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>
+);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> people (<span class="hljs-keyword">id</span>, first_name, last_name, age) <span class="hljs-keyword">values</span>
+(<span class="hljs-number">1</span>, <span class="hljs-string">'Vlad'</span>, <span class="hljs-string">'Boyarskiy'</span>, <span class="hljs-number">21</span>),
+(<span class="hljs-number">2</span>,<span class="hljs-string">'Oksi'</span>, <span class="hljs-string">' Bahatskaya'</span>, <span class="hljs-number">30</span>),
+(<span class="hljs-number">3</span>,<span class="hljs-string">'Vadim'</span>, <span class="hljs-string">' Vadimich'</span>, <span class="hljs-number">32</span>);
+</code></pre>
+<p>Below image shows the final project structure in Eclipse. </p>
+<p><img src="./Spring JdbcTemplate Example - JournalDev_files/Spring-JDBCTemplate-Example-Project.png" alt="Spring JdbcTemplate Example" width="630" height="656" class="aligncenter size-full wp-image-17055" srcset="https://cdn.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example-Project.png 630w, https://cdn.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example-Project-432x450.png 432w, https://cdn.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example-Project-20x20.png 20w" sizes="(max-width: 630px) 100vw, 630px"></p>
+<h3><span id="spring-jdbc-maven-dependencies">Spring JDBC Maven Dependencies</span></h3>
+<p>We need following dependencies – <code>spring-core</code>, <code>spring-context</code>, <code>spring-jdbc</code> and <code>postgresql</code>. If you are using any other relational database such as MySQL, then add it’s corresponding java driver dependencies. Here is our final pom.xml file.</p>
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div data-type="ad" data-publisher="journaldev.com" data-format="300x250" data-zone="jd_post_mid_300x250"></div>
+</div>
+
+<pre style="display: block;"><code class="hljs xml"><div class="re_clip-board">Copy</div>
+<span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"UTF-8"</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://maven.apache.org/POM/4.0.0"</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+	<span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span>
+
+	<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.journaldev.spring<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>JdbcTemplate<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">spring.framework</span>&gt;</span>4.3.0.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">spring.framework</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">postgres.version</span>&gt;</span>42.1.4<span class="hljs-tag">&lt;/<span class="hljs-name">postgres.version</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.postgresql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>postgresql<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${postgres.version}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${spring.framework}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-context<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${spring.framework}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-jdbc<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${spring.framework}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span>
+</code></pre>
+<h3><span id="spring-datasource-configuration">Spring DataSource Configuration</span></h3>
+<p>Next step is to create spring configuration class to define <code>DataSource</code> bean. I am using java based configuration, you can also do this using spring bean configuration xml file.</p>
+<pre style="display: block;"><code class="hljs java"><div class="re_clip-board">Copy</div>
+<span class="hljs-keyword">package</span> com.journaldev.spring.config;
+
+<span class="hljs-keyword">import</span> javax.sql.DataSource;
+
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.Bean;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.ComponentScan;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.Configuration;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.PropertySource;
+<span class="hljs-keyword">import</span> org.springframework.core.env.Environment;
+<span class="hljs-keyword">import</span> org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+<span class="hljs-meta">@Configuration</span>
+<span class="hljs-meta">@ComponentScan</span>(<span class="hljs-string">"com.journaldev.spring"</span>)
+<span class="hljs-meta">@PropertySource</span>(<span class="hljs-string">"classpath:database.properties"</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppConfig</span> </span>{
+
+	<span class="hljs-meta">@Autowired</span>
+	Environment environment;
+
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String URL = <span class="hljs-string">"url"</span>;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String USER = <span class="hljs-string">"dbuser"</span>;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String DRIVER = <span class="hljs-string">"driver"</span>;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String PASSWORD = <span class="hljs-string">"dbpassword"</span>;
+
+	<span class="hljs-meta">@Bean</span>
+	<span class="hljs-function">DataSource <span class="hljs-title">dataSource</span><span class="hljs-params">()</span> </span>{
+		DriverManagerDataSource driverManagerDataSource = <span class="hljs-keyword">new</span> DriverManagerDataSource();
+		driverManagerDataSource.setUrl(environment.getProperty(URL));
+		driverManagerDataSource.setUsername(environment.getProperty(USER));
+		driverManagerDataSource.setPassword(environment.getProperty(PASSWORD));
+		driverManagerDataSource.setDriverClassName(environment.getProperty(DRIVER));
+		<span class="hljs-keyword">return</span> driverManagerDataSource;
+	}
+}
+</code></pre>
+<ul>
+<li>@Configuration – says that this class is configuration for Spring context.</li>
+<li>@ComponentScan(“com.journaldev.spring”)- specifies the package to scan for component classes.</li>
+<li>@PropertySource(“classpath:database.properties”)- says that properties will be read from database.properties file.</li>
+</ul>
+<p>Content of <code>database.properties</code> file is shown below.</p>
+<pre style="display: block;"><code class="hljs makefile"><div class="re_clip-board">Copy</div>
+driver=org.postgresql.Driver
+url=jdbc:postgresql://127.0.0.1:5432/school
+dbuser=postgres
+dbpassword=postgres
+</code></pre>
+<p>If you are using MySQL or some other relational database, change above configurations accordingly.</p>
+<h3><span id="spring-jdbc-model-classes">Spring JDBC Model Classes</span></h3>
+<p>Next step is to create model classes to map our database table.</p>
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div data-type="ad" data-publisher="journaldev.com" data-zone="jd_leaderboard_728x90" data-format="728x90"> </div>
+</div>
+
+<pre style="display: block;"><code class="hljs java"><div class="re_clip-board">Copy</div>
+<span class="hljs-keyword">package</span> com.journaldev.model;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+	<span class="hljs-keyword">private</span> Long id;
+	<span class="hljs-keyword">private</span> Integer age;
+	<span class="hljs-keyword">private</span> String firstName;
+	<span class="hljs-keyword">private</span> String lastName;
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> </span>{
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(Long id, Integer age, String firstName, String lastName)</span> </span>{
+		<span class="hljs-keyword">this</span>.id = id;
+		<span class="hljs-keyword">this</span>.age = age;
+		<span class="hljs-keyword">this</span>.firstName = firstName;
+		<span class="hljs-keyword">this</span>.lastName = lastName;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> id;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(Long id)</span> </span>{
+		<span class="hljs-keyword">this</span>.id = id;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> Integer <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> age;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(Integer age)</span> </span>{
+		<span class="hljs-keyword">this</span>.age = age;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getFirstName</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> firstName;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setFirstName</span><span class="hljs-params">(String firstName)</span> </span>{
+		<span class="hljs-keyword">this</span>.firstName = firstName;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getLastName</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> lastName;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setLastName</span><span class="hljs-params">(String lastName)</span> </span>{
+		<span class="hljs-keyword">this</span>.lastName = lastName;
+	}
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> <span class="hljs-string">"Person{"</span> + <span class="hljs-string">"id="</span> + id + <span class="hljs-string">", age="</span> + age + <span class="hljs-string">", firstName='"</span> + firstName + <span class="hljs-string">'\''</span> + <span class="hljs-string">", lastName='"</span> + lastName
+				+ <span class="hljs-string">'\''</span> + <span class="hljs-string">'}'</span>;
+	}
+}
+</code></pre>
+<p>For fetching data from database we need to implement interface <code>RowMapper</code>. This interface has only one method <code>mapRow(ResultSet resultSet, int i)</code>, which will return one instance of our model class (i.e. Person).</p>
+<pre style="display: block;"><code class="hljs java"><div class="re_clip-board">Copy</div>
+<span class="hljs-keyword">package</span> com.journaldev.model;
+
+<span class="hljs-keyword">import</span> java.sql.ResultSet;
+<span class="hljs-keyword">import</span> java.sql.SQLException;
+
+<span class="hljs-keyword">import</span> org.springframework.jdbc.core.RowMapper;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PersonMapper</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">RowMapper</span>&lt;<span class="hljs-title">Person</span>&gt; </span>{
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> Person <span class="hljs-title">mapRow</span><span class="hljs-params">(ResultSet resultSet, <span class="hljs-keyword">int</span> i)</span> <span class="hljs-keyword">throws</span> SQLException </span>{
+
+		Person person = <span class="hljs-keyword">new</span> Person();
+		person.setId(resultSet.getLong(<span class="hljs-string">"id"</span>));
+		person.setFirstName(resultSet.getString(<span class="hljs-string">"first_name"</span>));
+		person.setLastName(resultSet.getString(<span class="hljs-string">"last_name"</span>));
+		person.setAge(resultSet.getInt(<span class="hljs-string">"age"</span>));
+		<span class="hljs-keyword">return</span> person;
+	}
+}
+</code></pre>
+<h3><span id="spring-jdbc-dao-classes">Spring JDBC DAO Classes</span></h3>
+<p>Final step is to create DAO classes to map our model class to database table using sql queries. We will also configure DataSource using <code>@Autowired</code> annotation and expose some APIs.</p>
+<pre style="display: block;"><code class="hljs java"><div class="re_clip-board">Copy</div>
+<span class="hljs-keyword">package</span> com.journaldev.spring.dao;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">import</span> com.journaldev.model.Person;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">PersonDAO</span> </span>{
+	<span class="hljs-function">Person <span class="hljs-title">getPersonById</span><span class="hljs-params">(Long id)</span></span>;
+
+	<span class="hljs-function">List&lt;Person&gt; <span class="hljs-title">getAllPersons</span><span class="hljs-params">()</span></span>;
+
+	<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">deletePerson</span><span class="hljs-params">(Person person)</span></span>;
+
+	<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">updatePerson</span><span class="hljs-params">(Person person)</span></span>;
+
+	<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">createPerson</span><span class="hljs-params">(Person person)</span></span>;
+}
+</code></pre>
+<pre style="display: block;"><code class="hljs java"><div class="re_clip-board">Copy</div>
+<span class="hljs-keyword">package</span> com.journaldev.spring.dao;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">import</span> javax.sql.DataSource;
+
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.jdbc.core.JdbcTemplate;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Component;
+
+<span class="hljs-keyword">import</span> com.journaldev.model.Person;
+<span class="hljs-keyword">import</span> com.journaldev.model.PersonMapper;
+
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PersonDAOImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">PersonDAO</span> </span>{
+
+	JdbcTemplate jdbcTemplate;
+
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String SQL_FIND_PERSON = <span class="hljs-string">"select * from people where id = ?"</span>;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String SQL_DELETE_PERSON = <span class="hljs-string">"delete from people where id = ?"</span>;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String SQL_UPDATE_PERSON = <span class="hljs-string">"update people set first_name = ?, last_name = ?, age  = ? where id = ?"</span>;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String SQL_GET_ALL = <span class="hljs-string">"select * from people"</span>;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String SQL_INSERT_PERSON = <span class="hljs-string">"insert into people(id, first_name, last_name, age) values(?,?,?,?)"</span>;
+
+	<span class="hljs-meta">@Autowired</span>
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PersonDAOImpl</span><span class="hljs-params">(DataSource dataSource)</span> </span>{
+		jdbcTemplate = <span class="hljs-keyword">new</span> JdbcTemplate(dataSource);
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> Person <span class="hljs-title">getPersonById</span><span class="hljs-params">(Long id)</span> </span>{
+		<span class="hljs-keyword">return</span> jdbcTemplate.queryForObject(SQL_FIND_PERSON, <span class="hljs-keyword">new</span> Object[] { id }, <span class="hljs-keyword">new</span> PersonMapper());
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Person&gt; <span class="hljs-title">getAllPersons</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> jdbcTemplate.query(SQL_GET_ALL, <span class="hljs-keyword">new</span> PersonMapper());
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">deletePerson</span><span class="hljs-params">(Person person)</span> </span>{
+		<span class="hljs-keyword">return</span> jdbcTemplate.update(SQL_DELETE_PERSON, person.getId()) &gt; <span class="hljs-number">0</span>;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">updatePerson</span><span class="hljs-params">(Person person)</span> </span>{
+		<span class="hljs-keyword">return</span> jdbcTemplate.update(SQL_UPDATE_PERSON, person.getFirstName(), person.getLastName(), person.getAge(),
+				person.getId()) &gt; <span class="hljs-number">0</span>;
+	}
+
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">createPerson</span><span class="hljs-params">(Person person)</span> </span>{
+		<span class="hljs-keyword">return</span> jdbcTemplate.update(SQL_INSERT_PERSON, person.getId(), person.getFirstName(), person.getLastName(),
+				person.getAge()) &gt; <span class="hljs-number">0</span>;
+	}
+}
+</code></pre>
+<p><code>PersonDAOImpl</code> class is annotated with <code>@Component</code> annotation and in this class we have field with type <code>JdbcTemplate</code>. </p>
+<p>When constructor of this class will be invoked, an instance of <code>DataSource</code> will be injected into it and we can create an instance of JdbcTemplate. After that we can use in in our methods.</p>
+<h3><span id="spring-jdbctemplate-test-program">Spring JdbcTemplate Test Program</span></h3>
+<p>Our Spring JdbcTemplate example project is ready, let’s test this with a test class.</p>
+<pre style="display: block;"><code class="hljs cs"><div class="re_clip-board">Copy</div>
+package com.journaldev;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.journaldev.model.Person;
+import com.journaldev.spring.config.AppConfig;
+import com.journaldev.spring.dao.PersonDAO;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> {
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(<span class="hljs-params">String[] args</span>) </span>{
+		AnnotationConfigApplicationContext context = <span class="hljs-keyword">new</span> AnnotationConfigApplicationContext(AppConfig.class);
+
+		PersonDAO personDAO = context.getBean(PersonDAO.class);
+
+		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"List of person is:"</span>);
+
+		<span class="hljs-keyword">for</span> (Person p : personDAO.getAllPersons()) {
+			System.<span class="hljs-keyword">out</span>.println(p);
+		}
+
+		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"\nGet person with ID 2"</span>);
+
+		Person personById = personDAO.getPersonById(<span class="hljs-number">2</span>L);
+		System.<span class="hljs-keyword">out</span>.println(personById);
+
+		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"\nCreating person: "</span>);
+		Person person = <span class="hljs-keyword">new</span> Person(<span class="hljs-number">4</span>L, <span class="hljs-number">36</span>, <span class="hljs-string">"Sergey"</span>, <span class="hljs-string">"Emets"</span>);
+		System.<span class="hljs-keyword">out</span>.println(person);
+		personDAO.createPerson(person);
+		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"\nList of person is:"</span>);
+
+		<span class="hljs-keyword">for</span> (Person p : personDAO.getAllPersons()) {
+			System.<span class="hljs-keyword">out</span>.println(p);
+		}
+
+		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"\nDeleting person with ID 2"</span>);
+		personDAO.deletePerson(personById);
+
+		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"\nUpdate person with ID 4"</span>);
+
+		Person pperson = personDAO.getPersonById(<span class="hljs-number">4</span>L);
+		pperson.setLastName(<span class="hljs-string">"CHANGED"</span>);
+		personDAO.updatePerson(pperson);
+
+		System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">"\nList of person is:"</span>);
+		<span class="hljs-keyword">for</span> (Person p : personDAO.getAllPersons()) {
+			System.<span class="hljs-keyword">out</span>.println(p);
+		}
+
+		context.close();
+	}
+}
+</code></pre>
+<p>Below image shows the output produced when we execute above program. Output will vary based on sample data and on multiple executions, idea is to learn here how to use Spring JdbcTemplate through example program.</p>
+<p><img src="./Spring JdbcTemplate Example - JournalDev_files/Spring-JDBCTemplate-Example.png" alt="Spring JDBC, Spring JdbcTemplate Example" width="800" height="769" class="aligncenter size-full wp-image-17057" srcset="https://cdn.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example.png 800w, https://cdn.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example-450x433.png 450w, https://cdn.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example-768x738.png 768w, https://cdn.journaldev.com/wp-content/uploads/2017/11/Spring-JDBCTemplate-Example-20x20.png 20w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<p>That’s all about Spring JdbcTemplate, you can download the final project from below link.</p>
+<div class="download-box"><a href="https://www.journaldev.com/wp-content/uploads/spring/SpringJDBCTemplateExample.zip" target="_blank">Download Spring JdbcTemplate Example Project</a></div>
+<p>Reference: <a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html" rel="noopener" target="_blank">API Doc</a></p>
+
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;">
+<script async="" src="./Spring JdbcTemplate Example - JournalDev_files/adsbygoogle.js.download"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-6459403732537629" data-ad-slot="7381719979"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;"></div><div class="scriptlesssocialsharing"><div class="scriptlesssocialsharing-buttons"><a class="button whatsapp" target="_blank" href="https://wa.me/?text=Spring%20JdbcTemplate%20Example%20%E2%80%94%20https%3A%2F%2Fwww.journaldev.com%2F17053%2Fspring-jdbctemplate-example" rel="noopener"><span class="sss-name">WhatsApp</span></a><a class="button reddit" target="_blank" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.journaldev.com%2F17053%2Fspring-jdbctemplate-example" rel="noopener"><span class="sss-name">Reddit</span></a><a class="button twitter" target="_blank" href="https://twitter.com/intent/tweet?text=Spring%20JdbcTemplate%20Example&amp;url=https%3A%2F%2Fwww.journaldev.com%2F17053%2Fspring-jdbctemplate-example&amp;via=JournalDev&amp;related=JournalDev" rel="noopener"><span class="sss-name">Twitter</span></a><a class="button facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.journaldev.com%2F17053%2Fspring-jdbctemplate-example" rel="noopener"><span class="sss-name">Facebook</span></a><a class="button linkedin" target="_blank" href="https://www.linkedin.com/shareArticle?mini=1&amp;url=https%3A%2F%2Fwww.journaldev.com%2F17053%2Fspring-jdbctemplate-example&amp;title=Spring%20JdbcTemplate%20Example&amp;source=https://www.journaldev.com" rel="noopener"><span class="sss-name">Linkedin</span></a><a class="button email" href="mailto:?body=I%20read%20this%20post%20and%20wanted%20to%20share%20it%20with%20you.%20Here%27s%20the%20link:%20https%3A%2F%2Fwww.journaldev.com%2F17053%2Fspring-jdbctemplate-example&amp;subject=A%20post%20worth%20sharing:%20Spring%20JdbcTemplate%20Example" rel="noopener"><span class="sss-name">Email</span></a></div></div><div class="prev-next-navigation"><a href="https://www.journaldev.com/17034/spring-data-jpa" rel="prev"><div class="previous"><span class="prev_icon">&nbsp;Previous </span><br> <span class="pagi_content">Spring Data JPA</span></div></a><a href="https://www.journaldev.com/17096/spring-resttemplate-example" rel="next"><div class="next"><span class="next_icon">Next&nbsp;</span><br> <span class="pagi_content">Spring RestTemplate Example</span></div></a></div>
+		<!-- .prev-next-navigation --><section class="author-box" itemprop="author" itemscope="" itemtype="https://schema.org/Person"><img alt="" src="./Spring JdbcTemplate Example - JournalDev_files/8087ef00af2610b870ada12392286695.jpeg" srcset="https://secure.gravatar.com/avatar/8087ef00af2610b870ada12392286695?s=240&amp;d=blank&amp;r=g 2x" class="avatar avatar-120 photo" height="120" width="120"><h4 class="author-box-title">About <span itemprop="name">Pankaj</span></h4><div class="author-box-content" itemprop="description"><p>If you have come this far, it means that you liked what you are reading. Why not reach little more and connect with me directly on <a href="https://plus.google.com/118104420597648001532/posts?rel=author"><strong>Google Plus</strong></a>, <a href="https://www.facebook.com/journaldev"><strong>Facebook</strong></a> or <a href="https://twitter.com/JournalDev"><strong>Twitter</strong></a>. I would love to hear your thoughts and opinions on my articles directly.</p>
+<p>Recently I started creating video tutorials too, so do check out my videos on <a href="https://www.youtube.com/user/JournalDev"><strong>Youtube</strong></a>.</p>
+</div></section></div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://www.journaldev.com/spring" rel="category tag">Spring</a></span> </p></footer></article><div class="after-entry">
+<!-- Quick Adsense Wordpress Plugin: http://quickadsense.com/ -->
+<section id="adswidget7-quick-adsense-3" class="widget widget_adswidget7-quick-adsense"><div class="widget-wrap"><!-- 728x90/970x90/970x250/320x50 -->
+<div id="waldo-tag-2281" data-processed="true"><script type="text/javascript">googletag.cmd.push(function() { googletag.display('waldo-tag-2281'); });</script></div></div></section>
+</div><div class="adjacent-entry-pagination pagination"><div class="pagination-previous alignleft"><a href="https://www.journaldev.com/17034/spring-data-jpa" rel="prev"><span class="adjacent-post-link">« Spring Data JPA</span></a></div><div class="pagination-next alignright"><a href="https://www.journaldev.com/17096/spring-resttemplate-example" rel="next"><span class="adjacent-post-link">Spring RestTemplate Example »</span></a></div></div><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-45183">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name">Art</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-11-26T00:13:56+00:00" itemprop="datePublished"><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-45183" class="comment-time-link" itemprop="url">November 26, 2018 at 12:13 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello. If I have two classes, Person and Auto, for example. And I need to make two separate classes, two separate dataSources in each class DAO implementation, like PersonDAO and AutoDAO. And then I need to make a Transaction between these two classes ( some method in Person binder with some method in Auto, and if one method failed, another method shouldn’t update any information in database – rollback). In final, we have two separate dataSources and transactions inside aren’t binded  in one transaction. What can I do to make one dataSource for all DAO implementations?</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-45183" onclick="return addComment.moveForm( &quot;comment-45183&quot;, &quot;45183&quot;, &quot;respond&quot;, &quot;17053&quot; )" aria-label="Reply to Art">Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-44558">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name">Suraj Bhandari</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-09-21T03:31:37+00:00" itemprop="datePublished"><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-44558" class="comment-time-link" itemprop="url">September 21, 2018 at 3:31 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Pankaj,</p>
+<p>Your posts always gives clear picture about any topic. Thanks for the that.<br>
+One quick question, it is possible to fetch two result set in spring jdbc template in same query?<br>
+ for Ex: First result will give count of total record and second result will give me record</p>
+<p>Any suggestion will be appreciated..</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-44558" onclick="return addComment.moveForm( &quot;comment-44558&quot;, &quot;44558&quot;, &quot;respond&quot;, &quot;17053&quot; )" aria-label="Reply to Suraj Bhandari">Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-pankaj bypostauthor even depth-2" id="comment-44559">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name"><a href="https://www.journaldev.com/" class="comment-author-link" rel="external nofollow" itemprop="url">Pankaj</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-09-21T03:50:06+00:00" itemprop="datePublished"><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-44559" class="comment-time-link" itemprop="url">September 21, 2018 at 3:50 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am not sure because I have never been in a situation where I need two ResultSet objects from a single query. Why would you want to do that? Isn’t it better to fire one query at a time and process the result set and then move to the next one?</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-44559" onclick="return addComment.moveForm( &quot;comment-44559&quot;, &quot;44559&quot;, &quot;respond&quot;, &quot;17053&quot; )" aria-label="Reply to Pankaj">Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-44333">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name">Matteo</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-08-30T02:22:51+00:00" itemprop="datePublished"><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-44333" class="comment-time-link" itemprop="url">August 30, 2018 at 2:22 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Pankaj,<br>
+thank you, I read many of your posts and I always found them very interesting and well written.</p>
+<p>I have a question: when using JdbcTemplate and its subclasses, for example NamedParameterJdbcTemplate, is Spring that handle the connection pooling?<br>
+Is spring that opens, closes and reuses a connection right?<br>
+I don’t have to take care of opening, closing connection, resultset etc. Is it correct?</p>
+<p>Thank you<br>
+Greeting from Rome (Italy)</p>
+<p>Matteo</p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-44333" onclick="return addComment.moveForm( &quot;comment-44333&quot;, &quot;44333&quot;, &quot;respond&quot;, &quot;17053&quot; )" aria-label="Reply to Matteo">Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-pankaj bypostauthor even depth-2" id="comment-44340">
+	<article itemprop="comment" itemscope="" itemtype="https://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+				<span itemprop="name"><a href="https://www.journaldev.com/" class="comment-author-link" rel="external nofollow" itemprop="url">Pankaj</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-08-30T09:30:18+00:00" itemprop="datePublished"><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-44340" class="comment-time-link" itemprop="url">August 30, 2018 at 9:30 am</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for the appreciation Matteo.</p>
+<p>Spring will not create the connection pool, the best practice is to let servlet container care about connection pooling and use JNDI to use the pool. Read this post for better understanding:</p>
+<p><a href="https://www.journaldev.com/2597/spring-datasource-jndi-with-tomcat-example" rel="nofollow">https://www.journaldev.com/2597/spring-datasource-jndi-with-tomcat-example</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel="nofollow" class="comment-reply-link" href="https://www.journaldev.com/17053/spring-jdbctemplate-example#comment-44340" onclick="return addComment.moveForm( &quot;comment-44340&quot;, &quot;44340&quot;, &quot;respond&quot;, &quot;17053&quot; )" aria-label="Reply to Pankaj">Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div class="comment-policy-box">
+		<p class="comment-policy"><small><strong>Comment Policy:</strong>Please submit comments to add value to the post. Comments like "Thank You" and "Awesome Post" will be not published. If you want to post code then wrap them inside &lt;pre&gt; tags. For example <strong>&lt;pre&gt;class Foo { }&lt;/pre&gt;</strong>.<br>If you want to post XML content, then please escape &lt; with &amp;lt; and &gt; with &amp;gt; otherwise they will not be shown properly.</small></p>
+	</div>
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.journaldev.com/17053/spring-jdbctemplate-example#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.journaldev.com/wp-comments-post.php" method="post" id="commentform" class="comment-form anti-spam-form-processed" novalidate="">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="17053" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<!-- Anti-spam plugin v.5.3 wordpress.org/plugins/anti-spam/ -->
+		<p class="antispam-group antispam-group-q" style="clear: both; display: none;">
+			<label>Current ye@r <span class="required">*</span></label>
+			<input type="hidden" name="antspm-a" class="antispam-control antispam-control-a" value="2019">
+			<input type="text" name="antspm-q" class="antispam-control antispam-control-q" value="5.3" autocomplete="off">
+		</p>
+		<p class="antispam-group antispam-group-e" style="display: none;">
+			<label>Leave this field empty</label>
+			<input type="text" name="antspm-e-email-url-website" class="antispam-control antispam-control-e" value="" autocomplete="off">
+		</p>
+			<input type="hidden" name="antspm-d" class="antispam-control antispam-control-d" value="2019"></form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area q2w3-fixed-widget-container" role="complementary" aria-label="Primary Sidebar" itemscope="" itemtype="https://schema.org/WPSideBar" style="height: 2659px;"><section id="search-3" class="widget widget_search"><div class="widget-wrap"><div id="ajaxsearchlite1" class="wpdreams_asl_container asl_w asl_m asl_m_1">
+<div class="probox">
+
+    
+    <div class="promagnifier">
+                <div class="innericon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                <path id="magnifier-2-icon" d="M460.355,421.59L353.844,315.078c20.041-27.553,31.885-61.437,31.885-98.037
+                    C385.729,124.934,310.793,50,218.686,50C126.58,50,51.645,124.934,51.645,217.041c0,92.106,74.936,167.041,167.041,167.041
+                    c34.912,0,67.352-10.773,94.184-29.158L419.945,462L460.355,421.59z M100.631,217.041c0-65.096,52.959-118.056,118.055-118.056
+                    c65.098,0,118.057,52.959,118.057,118.056c0,65.096-52.959,118.056-118.057,118.056C153.59,335.097,100.631,282.137,100.631,217.041
+                    z"></path>
+            </svg>
+        </div>
+    </div>
+
+    
+    
+    <div class="prosettings" style="display:none;" data-opened="0">
+                <div class="innericon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                <polygon id="arrow-25-icon" transform="rotate(90 256 256)" points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256 "></polygon>
+            </svg>
+        </div>
+    </div>
+
+    
+    
+    <div class="proinput">
+        <form autocomplete="off" aria-label="Ajax search form">
+            <input aria-label="Search input" type="search" class="orig" name="phrase" placeholder="Instantly Search Tutorials..." value="" autocomplete="off">
+            <input aria-label="Autocomplete input, do not use this" type="text" class="autocomplete" name="phrase" value="" autocomplete="off">
+            <span class="loading"></span>
+            <input type="submit" value="Start search" style="width:0; height: 0; visibility: hidden;">
+        </form>
+    </div>
+
+    
+    
+    <div class="proloading">
+
+        <div class="asl_loader"><div class="asl_loader-inner asl_simple-circle"></div></div>
+
+            </div>
+
+            <div class="proclose">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+            <polygon id="x-mark-icon" points="438.393,374.595 319.757,255.977 438.378,137.348 374.595,73.607 255.995,192.225 137.375,73.622 73.607,137.352 192.246,255.983 73.622,374.625 137.352,438.393 256.002,319.734 374.652,438.378 "></polygon>
+        </svg>
+        </div>
+    
+    
+</div>
+</div>
+
+
+
+
+
+
+    <div id="asl_hidden_data">
+        <svg style="position:absolute" height="0" width="0">
+            <filter id="aslblur">
+                <fegaussianblur in="SourceGraphic" stdDeviation="4"></fegaussianblur>
+            </filter>
+        </svg>
+        <svg style="position:absolute" height="0" width="0">
+            <filter id="no_aslblur"></filter>
+        </svg>
+
+    </div>
+
+<div class="asl_init_data wpdreams_asl_data_ct" style="display:none !important;" id="asl_init_id_1" data-asldata="ew0KICAgICJob21ldXJsIjogImh0dHBzOi8vd3d3LmpvdXJuYWxkZXYuY29tLyIsDQogICAgInJlc3VsdHN0eXBlIjogInZlcnRpY2FsIiwNCiAgICAicmVzdWx0c3Bvc2l0aW9uIjogImhvdmVyIiwNCiAgICAiaXRlbXNjb3VudCI6IDQsDQogICAgImltYWdld2lkdGgiOiA3MCwNCiAgICAiaW1hZ2VoZWlnaHQiOiA3MCwNCiAgICAicmVzdWx0aXRlbWhlaWdodCI6ICI3MHB4IiwNCiAgICAic2hvd2F1dGhvciI6IDAsDQogICAgInNob3dkYXRlIjogMCwNCiAgICAic2hvd2Rlc2NyaXB0aW9uIjogMCwNCiAgICAiY2hhcmNvdW50IjogIDMsDQogICAgImRlZmF1bHRJbWFnZSI6ICJodHRwczovL3d3dy5qb3VybmFsZGV2LmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAxOC8xMC83MHg3MC5wbmciLA0KICAgICJoaWdobGlnaHQiOiAwLA0KICAgICJoaWdobGlnaHR3aG9sZXdvcmRzIjogMSwNCiAgICAic2Nyb2xsVG9SZXN1bHRzIjogMCwNCiAgICAicmVzdWx0YXJlYWNsaWNrYWJsZSI6IDEsDQogICAgImF1dG9jb21wbGV0ZSI6IHsNCiAgICAgICAgImVuYWJsZWQiIDogMSwNCiAgICAgICAgImxhbmciIDogImVuIg0KICAgIH0sDQogICAgInRyaWdnZXJvbnR5cGUiOiAxLA0KICAgICJ0cmlnZ2VyX29uX2NsaWNrIjogMCwNCiAgICAidHJpZ2dlcl9vbl9mYWNldF9jaGFuZ2UiOiAxLA0KICAgICJzZXR0aW5nc2ltYWdlcG9zIjogInJpZ2h0IiwNCiAgICAiaHJlc3VsdGFuaW1hdGlvbiI6ICJmeC1ub25lIiwNCiAgICAidnJlc3VsdGFuaW1hdGlvbiI6ICJmeC1ub25lIiwNCiAgICAiaHJlc3VsdGhpZGVkZXNjIjogIjEiLA0KICAgICJwcmVzY29udGFpbmVyaGVpZ2h0IjogIjQwMHB4IiwNCiAgICAicHNob3dzdWJ0aXRsZSI6ICIwIiwNCiAgICAicHNob3dkZXNjIjogIjEiLA0KICAgICJjbG9zZU9uRG9jQ2xpY2siOiAxLA0KICAgICJpaWZOb0ltYWdlIjogImRlc2NyaXB0aW9uIiwNCiAgICAiaWlSb3dzIjogMiwNCiAgICAiaWl0ZW1zV2lkdGgiOiAyMDAsDQogICAgImlpdGVtc0hlaWdodCI6IDIwMCwNCiAgICAiaWlzaG93T3ZlcmxheSI6IDEsDQogICAgImlpYmx1ck92ZXJsYXkiOiAxLA0KICAgICJpaWhpZGVDb250ZW50IjogMSwNCiAgICAiaWlhbmltYXRpb24iOiAiMSIsDQogICAgImFuYWx5dGljcyI6IDAsDQogICAgImFuYWx5dGljc1N0cmluZyI6ICIiLA0KICAgICJyZWRpcmVjdG9uY2xpY2siOiAxLA0KICAgICJyZWRpcmVjdENsaWNrVG8iOiAicmVzdWx0c19wYWdlIiwNCiAgICAicmVkaXJlY3RDbGlja0xvYyI6ICJzYW1lIiwNCiAgICAicmVkaXJlY3Rfb25fZW50ZXIiOiAxLA0KICAgICJyZWRpcmVjdEVudGVyVG8iOiAicmVzdWx0c19wYWdlIiwNCiAgICAicmVkaXJlY3RFbnRlckxvYyI6ICJzYW1lIiwNCiAgICAicmVkaXJlY3RfdXJsIjogIj9zPXtwaHJhc2V9IiwNCiAgICAib3ZlcnJpZGV3cGRlZmF1bHQiOiAwLA0KICAgICJvdmVycmlkZV9tZXRob2QiOiAiZ2V0Ig0KfQ0K"></div>
+</div></section>
+
+<!-- Quick Adsense Wordpress Plugin: http://quickadsense.com/ -->
+<section id="adswidget9-quick-adsense-3" class="widget widget_adswidget9-quick-adsense"><div class="widget-wrap"><!-- 300x250/300x600/160x600 -->
+<div id="waldo-tag-2282" data-processed="true"><script type="text/javascript">googletag.cmd.push(function() { googletag.display('waldo-tag-2282'); });</script></div></div></section>
+<section id="text-4" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Spring Framework</h4>
+			<div class="textwidget"><h3><a href="https://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial" target="_blank" rel="noopener">Spring Tutorial</a></h3>
+<h4>Spring Core</h4>
+<ol>
+<li><a href="https://www.journaldev.com/16922/spring-framework" target="_blank" rel="noopener">Spring Framework</a></li>
+<li><a href="https://www.journaldev.com/2410/spring-dependency-injection" target="_blank" rel="noopener">Spring Dependency Injection</a></li>
+<li><a href="https://www.journaldev.com/2461/spring-ioc-bean-example-tutorial" target="_blank" rel="noopener">Spring IoC and Bean</a></li>
+<li><a href="https://www.journaldev.com/2637/spring-bean-life-cycle" target="_blank" rel="noopener">Spring Bean Life Cycle</a></li>
+<li><a href="https://www.journaldev.com/2552/spring-rest-example-tutorial-spring-restful-web-services" target="_blank" rel="noopener">Spring REST</a></li>
+<li><a href="https://www.journaldev.com/8934/spring-rest-xml-and-json-example" target="_blank" rel="noopener">Spring REST XML</a></li>
+<li><a href="https://www.journaldev.com/17096/spring-resttemplate-example" target="_blank" rel="noopener">Spring RestTemplate</a></li>
+<li><a href="https://www.journaldev.com/2583/spring-aop-example-tutorial-aspect-advice-pointcut-joinpoint-annotations" target="_blank" rel="noopener">Spring AOP</a></li>
+<li><a href="https://www.journaldev.com/7801/spring-aop-method-profiling" target="_blank" rel="noopener">Spring AOP Method Profiling</a></li>
+<li><a href="https://www.journaldev.com/16966/spring-annotations" target="_blank" rel="noopener">Spring Annotations</a></li>
+<li><a href="https://www.journaldev.com/2623/spring-autowired-annotation" target="_blank" rel="noopener">Spring @Autowired</a></li>
+<li><a href="https://www.journaldev.com/3358/spring-requestmapping-requestparam-pathvariable-example" target="_blank" rel="noopener">Spring @RequestMapping</a></li>
+</ol>
+<h4>Spring MVC</h4>
+<ol>
+<li><a href="https://www.journaldev.com/14476/spring-mvc-example" target="_blank" rel="noopener">Spring MVC Example</a></li>
+<li><a href="https://www.journaldev.com/2433/spring-mvc-tutorial" target="_blank" rel="noopener">Spring MVC Tutorial</a></li>
+<li><a href="https://www.journaldev.com/2651/spring-mvc-exception-handling-controlleradvice-exceptionhandler-handlerexceptionresolver" target="_blank" rel="noopener">Spring MVC Exception Handling</a></li>
+<li><a href="https://www.journaldev.com/2668/spring-validation-example-mvc-validator" target="_blank" rel="noopener">Spring MVC Validator</a></li>
+<li><a href="https://www.journaldev.com/2676/spring-mvc-interceptor-example-handlerinterceptor-handlerinterceptoradapter" target="_blank" rel="noopener">Spring MVC Intercepter</a></li>
+<li><a href="https://www.journaldev.com/2573/spring-mvc-file-upload-example-single-multiple-files" target="_blank" rel="noopener">Spring MVC File Upload</a></li>
+<li><a href="https://www.journaldev.com/2610/spring-mvc-internationalization-i18n-and-localization-l10n-example" target="_blank" rel="noopener">Spring MVC i18n</a></li>
+<li><a href="https://www.journaldev.com/3531/spring-mvc-hibernate-mysql-integration-crud-example-tutorial" target="_blank" rel="noopener">Spring MVC Hibernate MqSQL</a></li>
+</ol>
+<h4>Spring ORM</h4>
+<ol>
+<li><a href="https://www.journaldev.com/7655/spring-orm-example-jpa-hibernate-transaction" target="_blank" rel="noopener">Spring ORM</a></li>
+<li><a href="https://www.journaldev.com/7772/spring-orm-example-with-jpa-hibernate-aop-transactions" target="_blank" rel="noopener">Spring ORM JPA</a></li>
+<li><a href="https://www.journaldev.com/17034/spring-data-jpa" target="_blank" rel="noopener">Spring Data JPA</a></li>
+<li><a href="https://www.journaldev.com/2603/spring-transaction-management-jdbc-example" target="_blank" rel="noopener">Spring Transaction</a></li>
+<li><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example" target="_blank" rel="noopener">Spring JdbcTemplate</a></li>
+</ol>
+<h4>Spring Security</h4>
+<ol>
+<li><a href="https://www.journaldev.com/8669/introduction-to-spring-4-security" target="_blank" rel="noopener">Spring Security Overview</a></li>
+<li><a href="https://www.journaldev.com/2715/spring-security-example-tutorial" target="_blank" rel="noopener">Spring Security Example Tutorial</a></li>
+<li><a href="https://www.journaldev.com/2736/spring-security-example-userdetailsservice" target="_blank" rel="noopener">Spring Security UserDetailsService</a></li>
+<li><a href="https://www.journaldev.com/8718/spring-4-security-mvc-login-logout-example" target="_blank" rel="noopener">Spring MVC Login Logout</a></li>
+<li><a href="https://www.journaldev.com/8748/spring-4-mvc-security-managing-roles-example" target="_blank" rel="noopener">Spring Security Roles</a></li>
+</ol>
+<h4>Spring Boot</h4>
+<ol>
+<li><a href="https://www.journaldev.com/7969/spring-boot-tutorial" target="_blank" rel="noopener">Spring Boot Tutorial</a></li>
+<li><a href="https://www.journaldev.com/7989/key-components-and-internals-of-spring-boot-framework" target="_blank" rel="noopener">Spring Boot Components</a></li>
+<li><a href="https://www.journaldev.com/8195/spring-boot-cli-setup-and-helloworld-example" target="_blank" rel="noopener">Spring Boot CLI Hello World</a></li>
+<li><a href="https://www.journaldev.com/8225/spring-boot-initilizr-web-interface" target="_blank" rel="noopener">Spring Boot Initilizr Web</a></li>
+<li><a href="https://www.journaldev.com/8596/spring-boot-initilizr-with-ides-or-ide-plugins" target="_blank" rel="noopener">Spring Boot Initilizr IDE</a></li>
+<li><a href="https://www.journaldev.com/8609/spring-boot-initilizr-with-spring-boot-cli" target="_blank" rel="noopener">Spring Boot Initilizr CLI</a></li>
+<li><a href="https://www.journaldev.com/8650/spring-boot-initilizr-with-thirdparty-tools" target="_blank" rel="noopener">Spring Boot Initilizr Tools</a></li>
+<li><a href="https://www.journaldev.com/18156/spring-boot-mongodb" target="_blank" rel="noopener">Spring Boot MongoDB</a></li>
+<li><a href="https://www.journaldev.com/18141/spring-boot-redis-cache" target="_blank" rel="noopener">Spring Boot Redis Cache</a></li>
+<li><a href="https://www.journaldev.com/8611/spring-boot-interview-questions" target="_blank" rel="noopener">Spring Boot Interview Questions</a></li>
+</ol>
+<h4>Spring Batch</h4>
+<ol>
+<li><a href="https://www.journaldev.com/17119/spring-batch" target="_blank" rel="noopener">Spring Batch</a></li>
+<li><a href="https://www.journaldev.com/17157/spring-batch-example" target="_blank" rel="noopener">Spring Batch Example</a></li>
+</ol>
+<h4>Spring AMQP</h4>
+<ol>
+<li><a href="https://www.journaldev.com/11643/spring-amqp" target="_blank" rel="noopener">Spring AMQP</a></li>
+<li><a href="https://www.journaldev.com/11655/spring-rabbitmq" target="_blank" rel="noopener">Spring RabbitMQ</a></li>
+<li><a href="https://www.journaldev.com/11713/spring-amqp-rabbitmq-example" target="_blank" rel="noopener">Spring AMQP RabbitMQ</a></li>
+<li><a href="https://www.journaldev.com/11766/apache-activemq" target="_blank" rel="noopener">Apache ActiveMQ</a></li>
+<li><a href="https://www.journaldev.com/12697/spring-amqp-activemq-tutorial" target="_blank" rel="noopener">Spring ActiveMQ Tutorial</a></li>
+<li><a href="https://www.journaldev.com/12743/spring-activemq-example" target="_blank" rel="noopener">Spring ActiveMQ Example</a></li>
+</ol>
+<h4>Spring Integrations</h4>
+<ol>
+<li><a href="https://www.journaldev.com/2593/spring-jdbc-example" target="_blank" rel="noopener">Spring JDBC</a></li>
+<li><a href="https://www.journaldev.com/2597/spring-datasource-jndi-with-tomcat-example" target="_blank" rel="noopener">Spring DataSource JNDI</a></li>
+<li><a href="https://www.journaldev.com/3524/spring-hibernate-integration-example-tutorial" target="_blank" rel="noopener">Spring Hibernate</a></li>
+<li><a href="https://www.journaldev.com/4058/primefaces-spring-4-with-jpa-hibernate-eclipselink-example-tutorial" target="_blank" rel="noopener">Spring Primefaces JPA</a></li>
+<li><a href="https://www.journaldev.com/4061/primefaces-spring-eclipselink-nosql-mongodb-oracle-nosql-db" target="_blank" rel="noopener">Spring Primefaces MongoDB</a></li>
+<li><a href="https://www.journaldev.com/4096/primefaces-spring-hibernate-integration-example-tutorial" target="_blank" rel="noopener">Spring Primefaces Hibernate</a></li>
+<li><a href="https://www.journaldev.com/4260/primefaces-hibernate-and-springroo-integration" target="_blank" rel="noopener">SpringRoo Primefaces Hibernate</a></li>
+<li><a href="https://www.journaldev.com/7112/jsf-spring-integration-example-tutorial" target="_blank" rel="noopener">Spring JSF</a></li>
+<li><a href="https://www.journaldev.com/7122/jsf-spring-hibernate-integration-example-tutorial" target="_blank" rel="noopener">Spring JDF Hibernate</a></li>
+</ol>
+<h4>Miscellaneous</h4>
+<ol>
+<li><a href="https://www.journaldev.com/4144/spring-data-mongodb-example" target="_blank" rel="noopener">Spring Data MongoDB</a></li>
+<li><a href="https://www.journaldev.com/2696/spring-interview-questions-and-answers" target="_blank" rel="noopener">Spring Interview Questions</a></li>
+</ol>
+</div>
+		</div></section>
+<section id="text-11" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recommended Tutorials</h4>
+			<div class="textwidget"><h4>Java Tutorials</h4>
+<ul>
+<li><a href="https://www.journaldev.com/942/java-io-tutorial" target="_blank">Java IO</a></li>
+<li><a href="https://www.journaldev.com/634/regular-expression-in-java-regex-example" target="_blank">Java Regular Expressions</a></li>
+<li><a href="https://www.journaldev.com/1079/multithreading-in-java" target="_blank">Multithreading in Java</a></li>
+<li><a href="https://www.journaldev.com/977/java-logging-api-tutorial-examples-logger-levels-handlers-formatters-filters" target="_blank">Java Logging</a></li>
+<li><a href="https://www.journaldev.com/721/java-annotations-example-tutorial" target="_blank">Java Annotations</a></li>
+<li><a href="https://www.journaldev.com/1240/java-xml-tutorial" target="_blank">Java XML</a></li>
+<li><a href="https://www.journaldev.com/1260/collections-in-java-tutorial" target="_blank">Collections in Java</a></li>
+<li><a href="https://www.journaldev.com/1663/java-generics-example-method-class-interface" target="_blank">Java Generics</a></li>
+<li><a href="https://www.journaldev.com/1696/exception-handling-in-java" target="_blank">Exception Handling in Java</a></li>
+<li><a href="https://www.journaldev.com/1789/java-reflection-example-tutorial" target="_blank">Java Reflection</a></li>
+<li><a href="https://www.journaldev.com/1827/java-design-patterns-example-tutorial" target="_blank">Java Design Patterns</a></li>
+<li><a href="https://www.journaldev.com/2681/jdbc-tutorial-with-example-projects-datasource-jndi-and-spring-integration" target="_blank">JDBC Tutorial</a></li>
+<h4>Java EE Tutorials</h4>
+<li><a href="https://www.journaldev.com/2114/servlet-jsp-tutorial" target="_blank">Servlet JSP Tutorial</a></li>
+<li><a href="https://www.journaldev.com/2310/struts2-tutorial-with-example-projects" target="_blank">Struts2 Tutorial</a></li>
+<li><a href="https://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial" target="_blank">Spring Tutorial</a></li>
+<li><a href="https://www.journaldev.com/3793/hibernate-tutorial" target="_blank">Hibernate Tutorial</a></li>
+<li><a href="https://www.journaldev.com/5516/primefaces-tutorial-with-example-projects" target="_blank">Primefaces Tutorial</a></li>
+<li><a href="https://www.journaldev.com/255/axis2-web-services-tutorial" target="_blank">Apache Axis 2</a></li>
+<li><a href="https://www.journaldev.com/498/jax-rs-restful-web-service-using-jersey-example-tutorial" target="_blank">JAX-RS</a></li>
+<li><a href="https://www.journaldev.com/1117/memcached-tutorial" target="_blank">Memcached Tutorial</a></li>
+</ul>
+</div>
+		</div></section>
+
+<!-- Quick Adsense Wordpress Plugin: http://quickadsense.com/ -->
+<section id="adswidget10-quick-adsense-2" class="widget widget_adswidget10-quick-adsense"><div class="widget-wrap"><!-- 300x250/300x600/160x600 -->
+<div id="waldo-tag-2283" data-processed="true"><script type="text/javascript">googletag.cmd.push(function() { googletag.display('waldo-tag-2283'); });</script></div></div></section>
+</aside></div></div><footer class="site-footer" itemscope="" itemtype="https://schema.org/WPFooter"><div class="wrap"><p>©&nbsp;2019 · <a href="https://www.journaldev.com/privacy-policy">Privacy Policy</a> · Powered by <a href="https://wordpress.org/" title="WordPress">WordPress</a></p></div></footer></div>
+<script type="text/javascript">
+    function _dmBootstrap(file) {
+        var _dma = document.createElement('script');
+        _dma.type = 'text/javascript';
+        _dma.async = true;
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + file;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+    }
+    function _dmFollowup(file) { if (typeof DMAds === 'undefined') _dmBootstrap('cdn2.DeveloperMedia.com/a.min.js'); }
+    (function () { _dmBootstrap('cdn1.DeveloperMedia.com/a.min.js'); setTimeout(_dmFollowup, 2000); })();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Spring JdbcTemplate Example - JournalDev_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-12171637-4', { 'anonymize_ip': true });
+</script>
+<script type="application/javascript">
+var truepushSDK = document.createElement('script');
+truepushSDK.setAttribute('src','https://app.truepush.com/sdk/app.js?key=5c384f661d09e8513bdc898d&reload='+new Date().getTime());
+document.head.appendChild(truepushSDK);
+</script>
+	<script src="./Spring JdbcTemplate Example - JournalDev_files/highlight.min.js.download"></script>
+	<script>
+		jQuery(document).ready(function($) {
+		  jQuery('pre code').each(function(i, block) {
+			hljs.highlightBlock(block);
+			$(".entry-content pre").show();
+		  });
+		  	
+			jQuery('.entry-content pre code').mouseenter(function(e){
+				var t = jQuery(this);
+					t.children(".re_clip-board").slideDown(100);
+				jQuery(e.target).mouseleave(function(){
+					t.children(".re_clip-board").slideUp(100);
+					
+					setTimeout(function() {
+						t.children(".re_clip-board").text("Copy");
+					}, 100);
+					
+				});
+			});
+			
+			jQuery('.entry-content pre code .re_clip-board').click(function(e){
+				re_copyToClipboard(jQuery(this));
+				$(this).text("Copied!");
+				$(this).css("width", "85px");
+			});
+		});
+		
+function re_copyToClipboard(element) {
+	var elements = element.parent();
+  	var $temp = $("<textarea>");
+  	$("body").append($temp);
+	var text = $(elements).text().replace(/Copy/g, "");
+  	$temp.val(text).select();
+  	document.execCommand("copy");
+  	$temp.remove();
+}
+
+/*Starting expand widget jquery codes */
+var rotation = 0;
+jQuery.fn.plus_rotate = function(degrees) {
+    $(this).css({"-webkit-transform" : "rotate("+ degrees +"deg)",
+                 "-moz-transform" : "rotate("+ degrees +"deg)",
+                 "-ms-transform" : "rotate("+ degrees +"deg)",
+                 "transform" : "rotate("+ degrees +"deg)"});
+    return $(this);
+};
+
+/*$(document).ready(function(){ */
+jQuery(document).ready(function($){
+  $(".expand_widget_title").click(function(){
+    if ( !$(this).parent().children("ul").is(":visible") ) {
+      rotation += 360;
+	  $(this).children(".widget_plus_icon").removeClass("zero_six_rotate");
+      $(this).children(".widget_plus_icon").addClass("tree_six_rotate");
+     $(this).parent().children("ul").slideDown(390);
+	 
+	 var t = $(this);
+	 setTimeout(function() {
+	 	t.children(".widget_plus_icon").removeClass("plus_icon");
+		t.children(".widget_plus_icon").addClass("minus_icon");
+	 }, 400);
+  } else {
+    rotation -= 360;
+     	$(this).children(".widget_plus_icon").removeClass("tree_six_rotate");
+		$(this).children(".widget_plus_icon").addClass("zero_six_rotate");
+    $(this).parent().children("ul").slideUp(390);
+	
+	var t = $(this);
+	 setTimeout(function() {
+	 	t.children(".widget_plus_icon").removeClass("minus_icon");
+		t.children(".widget_plus_icon").addClass("plus_icon");
+	 }, 400);
+  }
+  });
+ });
+
+/*Ending expand widget jquery codes */
+
+</script>
+	<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/anti-spam-5.3.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var tocplus = {"smooth_scroll":"1","visibility_show":"show","visibility_hide":"hide","width":"Auto","smooth_scroll_offset":"60"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/front.min.js.download"></script>
+<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/comment-reply.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ajaxsearchlite = {"ajaxurl":"https:\/\/www.journaldev.com\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/www.journaldev.com\/wp-admin\/admin-ajax.php","js_scope":"jQuery"};
+var ASL = {"ajaxurl":"https:\/\/www.journaldev.com\/wp-admin\/admin-ajax.php","backend_ajaxurl":"https:\/\/www.journaldev.com\/wp-admin\/admin-ajax.php","js_scope":"jQuery","detect_ajax":"0","scrollbar":"1","js_retain_popstate":"0","version":"4732"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/jquery.ajaxsearchlite.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"sidebar","margin_top":10,"margin_bottom":0,"stop_id":"","screen_max_width":1024,"screen_max_height":120,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["adswidget10-quick-adsense-2"]}];
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/q2w3-fixed-widget.min.js.download"></script>
+<script type="text/javascript" src="./Spring JdbcTemplate Example - JournalDev_files/wp-embed.min.js.download"></script>
+<script src="./Spring JdbcTemplate Example - JournalDev_files/lazyload.min.js.download"></script>
+
+<!-- Page generated by LiteSpeed Cache 2.9 on 2019-01-20 09:58:33 --><div id="ajaxsearchlitesettings1" class="searchsettings wpdreams_asl_settings asl_w asl_s asl_s_1" style="animation-duration: 300ms;">
+    <form name="options" autocomplete="off">
+
+        
+                <fieldset class="asl_sett_scroll">
+            <legend style="display: none;">Generic selectors</legend>
+            <div class="asl_option_inner hiddend">
+                <input type="hidden" name="qtranslate_lang" id="qtranslate_lang" value="0">
+            </div>
+
+	        
+            
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="checked" id="set_exactonly1" title="Exact matches only" name="set_exactonly">
+                    <label for="set_exactonly1">Exact matches only</label>
+                </div>
+                <div class="asl_option_label">
+                    Exact matches only                </div>
+            </div>
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_intitle1" title="Search in title" name="set_intitle" checked="checked">
+                    <label for="set_intitle1">Search in title</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in title                </div>
+            </div>
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_incontent1" title="Search in content" name="set_incontent" checked="checked">
+                    <label for="set_incontent1">Search in content</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in content                </div>
+            </div>
+            <div class="asl_option_inner hiddend">
+                <input type="checkbox" value="None" id="set_inexcerpt1" title="Search in excerpt" name="set_inexcerpt" checked="checked">
+                <label for="set_inexcerpt1">Search in excerpt</label>
+            </div>
+
+            <div class="asl_option">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_inposts1" title="Search in posts" name="set_inposts" checked="checked">
+                    <label for="set_inposts1">Search in posts</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in posts                </div>
+            </div>
+            <div class="asl_option asl-o-last">
+                <div class="asl_option_inner">
+                    <input type="checkbox" value="None" id="set_inpages1" title="Search in pages" name="set_inpages" checked="checked">
+                    <label for="set_inpages1">Search in pages</label>
+                </div>
+                <div class="asl_option_label">
+                    Search in pages                </div>
+            </div>
+                    </fieldset>
+                    </form>
+</div><div id="ajaxsearchliteres1" class="vertical wpdreams_asl_results asl_w asl_r asl_r_1" style="animation-duration: 300ms; opacity: 0;">
+
+    
+    <div class="results mCustScr _mCSap_1 mCS_no_scrollbar"><div id="mCSBap_1" class="mCustomScrollBox mCS-light mCSBap_vertical mCSBap_inside" style="max-height: 0px;" tabindex="0"><div id="mCSBap_1_container" class="mCSBap_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+
+        
+            <div class="resdrg">
+            </div>
+
+        
+    </div><div id="mCSBap_1_scrollbar_vertical" class="mCSBap_scrollTools mCSBap_1_scrollbar mCS-light mCSBap_scrollTools_vertical" style="display: none;"><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#" class="mCSBap_buttonUp">Scroll up the results</a><div class="mCSBap_draggerContainer"><div id="mCSBap_1_dragger_vertical" class="mCSBap_dragger" style="position: absolute; min-height: 30px; top: 0px;"><div class="mCSBap_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSBap_draggerRail"></div></div><a href="https://www.journaldev.com/17053/spring-jdbctemplate-example#" class="mCSBap_buttonDown">Scroll down the results</a></div></div></div>
+
+    
+    
+</div><iframe name="_ym_native" frameborder="0" style="opacity: 0; width: 0px; height: 0px; position: absolute; left: 100%; bottom: 100%; border: 0px !important;" src="./Spring JdbcTemplate Example - JournalDev_files/saved_resource.html"></iframe><div>
+<!-- Old optin box style -->
+<!--<section class='tp-optin-types' id="jklm-box-two" style='display:none'>
+<div class="pn-mask-tp"></div>
+<div class="confirmation-template-tp">
+  <div class="arrow-up-tp"></div>
+  <div class="confirmation-logo-tp">
+    <img src="https://app.truepush.com/website_icons/5dc58207-55a9-443e-8bf7-2fbb46060efc.png" alt="">
+  </div>
+  <div class="confrimation-body-tp">
+    <p> Hi! stay up to date by allowing this site <br> to send you desktop notifications.</p>
+    <div style='text-align:right'>
+      <button class="btn-allow-tp" onclick="subscribeUserByTwoWayOptIn('hide')">Allow desktop notifications</button>
+      <button class="btn-later-tp" onclick="HideOptin('close')">Not now</button>
+    </div>
+    <div class='jklm-powered'><a target="_blank" href='https://app.truepush.com'>Powered by TruePush</a></div>
+  </div>
+  </div>
+</section>
+-->
+<!-- Top bar optin -->
+<section class="tp-optin-types" id="jklm-top_bar">
+  <div class="topbar">
+    <p>
+      <span> To get updates just for you </span>
+      <button onclick="subscribeUserByTwoWayOptIn(&#39;hide&#39;)" class="optin-subscribe">Subscribe to push notification</button>
+      <button onclick="HideOptin(&#39;close&#39;)" class="optin-close">×</button>
+    </p>
+  </div>
+</section>
+
+<!-- Bell optin -->
+<section class="tp-optin-types" id="jklm-bell" title="Click to subscribe!">
+  <button class="optin-bell" onclick="subscribeUserByTwoWayOptIn(&#39;hide&#39;)">
+    <img src="./Spring JdbcTemplate Example - JournalDev_files/bell.png">
+  </button>
+</section>
+
+<!-- Box type optin -->
+<section class="tp-optin-types" id="jklm-box" style="display:none">
+  <div class="tp-mask"></div>
+  <div class="optin-box2">
+    <h5>Allow updates from www.journaldev.com</h5>
+    <p class="turn-off">Get relevant updates just for you.</p>
+    <div>
+      <button class="not-now" onclick="HideOptin(&#39;close&#39;)">Not now</button>
+      <button class="allow" onclick="subscribeUserByTwoWayOptIn(&#39;hide&#39;)">Allow</button>
+      <p class="poweredby">Powered by <a style="text-decoration:none;color:inherit" target="_blank" href="https://truepush.com/">truepush</a></p>
+    </div>
+  </div>
+ </section>
+
+</div><ym-measure class="ym-viewport" style="display: block; top: 0px; right: 0px; bottom: 0px; left: 0px; position: fixed; transform: translate(0px, -100%); transform-origin: 0px 0px 0px;"></ym-measure><ym-measure class="ym-zoom" style="bottom: 100%; position: fixed; width: 100vw;"></ym-measure></body></html>

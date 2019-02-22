@@ -1,0 +1,50 @@
+12factor
+Twelve-factor app processes should never daemonize or write PID file
+
+Port Binding
+Web apps are sometimes executed inside a webserver container. For example,Java apps might run inside Tomcat.
+The web app exports HTTP as a service by binding to a port, and listening to requests coming in on that port.
+This is typically implemented by using dependency declaration to add a webserver library to the app, like  Jetty for Java.
+This happens entirely in user space, that is, within the app’s code. The contract with the execution environment is binding to a port to serve requests.
+Note also that the port-binding approach means that one app can become the backing service for another app, by providing the URL to the backing app as a resource handle in the config for the consuming app.
+
+Concurrency
+Any computer program, once run, is represented by one or more processes. Web apps have taken a variety of process-execution forms.
+ Processes in the twelve-factor app take strong cues from the unix process model for running service daemons. Using this model, the developer can architect their app to handle diverse workloads by assigning each type of work to a process type.
+This does not exclude individual processes from handling their own internal multiplexing, via threads inside the runtime VM, or the async/evented model found in tools such as EventMachine, Twisted, or Node.js. But an individual VM can only grow so large (vertical scale), so the application must also be able to span multiple processes running on multiple physical machines.
+This does not exclude individual processes from handling their own internal multiplexing
+The process model truly shines when it comes time to scale out. The share-nothing, horizontally partitionable nature of twelve-factor app processes means that adding more concurrency is a simple and reliable operation. The array of process types and number of processes of each type is known as the process formation.
+operating system’s process manager (tool like Foreman in development) to manage output streams, respond to crashed processes, and handle user-initiated restarts and shutdowns.
+
+Disposability
+The twelve-factor app’s processes are disposable, meaning they can be started or stopped at a moment’s notice.
+ Short startup time provides more agility for the release process and scaling up; and it aids robustness, because the process manager can more easily move processes to new physical machines when warranted.
+Processes should also be robust against sudden death, in the case of a failure in the underlying hardware. While this is a much less common occurrence than a graceful shutdown with SIGTERM, it can still happen. A recommended approach is use of a robust queueing backend, such as Beanstalkd, that returns jobs to the queue when clients disconnect or time out. Either way, a twelve-factor app is architected to handle unexpected, non-graceful terminations. Crash-only design takes this concept to its logical conclusion.
+
+
+
+The twelve-factor app is designed for continuous deployment by keeping the gap between development and production small. 
+Traditional app
+Twelve-factor app
+Time between deploys
+Weeks
+Hours
+Code authors vs code deployers
+Different people
+Same people
+Dev vs production environments
+Divergent
+As similar as possible
+Backing services, such as the app’s database, queueing system, or cache, is one area where dev/prod parity is important. Many languages offer libraries which simplify access to the backing service, including adapters to different types of services. 
+Developers sometimes find great appeal in using a lightweight backing service in their local environments, while a more serious and robust backing service will be used in production.
+The twelve-factor developer resists the urge to use different backing services between development and production, even when adapters theoretically abstract away any differences in backing services. Differences between backing services mean that tiny incompatibilities crop up, causing code that worked and passed tests in development or staging to fail in production. 
+cost of this friction and the subsequent dampening of continuous deployment is extremely high when considered in aggregate over the lifetime of an application.
+Adapters to different backing services are still useful, because they make porting to new backing services relatively painless. 
+
+
+
+
+
+Logs
+Logs provide visibility into the behavior of a running app.In server-based environments they are commonly written to a file on disk (a “logfile”); but this is only an output format.
+A twelve-factor app never concerns itself with routing or storage of its output stream. It should not attempt to write to or manage logfiles. Instead, each running process writes its event stream, unbuffered, to stdout. During local development, the developer will view this stream in the foreground of their terminal to observe the app’s behavior.

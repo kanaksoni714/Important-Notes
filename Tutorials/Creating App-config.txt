@@ -1,0 +1,2 @@
+App Config/ centralized configuration
+https://spring.io/guides/gs/centralized-configuration/

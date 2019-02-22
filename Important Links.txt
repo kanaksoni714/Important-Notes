@@ -1,0 +1,31 @@
+http://tutorials.jenkov.com/java-servlets/servlet-concurrency.html
+
+Circuit Breaker: 
+https://techblog.constantcontact.com/software-development/circuit-breakers-and-microservices/
+
+IoC: 
+https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
+
+Spring AOP: 
+https://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/aop.html
+
+Spring AOP: 
+https://www.baeldung.com/spring-aop
+
+SpringMVC: 
+https://justforchangesake.wordpress.com/2014/05/07/spring-mvc-request-life-cycle/
+
+SpringMVC: 
+https://terasolunaorg.github.io/guideline/1.0.1.RELEASE/en/Overview/SpringMVCOverview.html
+
+12Factor: 
+https://12factor.net/
+
+Spring Boot Test:
+https://www.baeldung.com/spring-boot-testing
+
+Test-Driven Development With a Spring Boot REST API:
+https://dzone.com/articles/test-driven-development-with-spring-boot-rest-api
+
+REST vs Messaging:
+https://solace.com/blog/products-tech/experience-awesomeness-event-driven-microservices

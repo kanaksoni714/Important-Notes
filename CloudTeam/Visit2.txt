@@ -1,0 +1,49 @@
+Group-1
+
+1. Difference between Java and Javascript?
+
+2. Advantages of Javascript over Java? 
+
+3. Is Javascript single threaded or multi threaded?
+
+4. What is noclassfoundException?
+
+5. What is noclassadef error?
+
+6. Why we use Spring? 
+
+ 
+
+Group-2
+
+7. Why we use @Autowired and can we create customized Annotations?
+
+8. When XML is checked, whether at Compile Time or Run Time?
+
+9. Life cycle of spring Bean?
+
+10. What is Dependency Injuction?
+
+11. How we use multi Threading in servelts?
+
+12. What is difference between Java singleton and Spring singleton?
+
+ 
+
+Group-3
+
+13. What is null pointer exception? Can we handle it using try catch?
+
+14. Where have you used Object class?
+
+15. What are the methods that you have used from Object class.
+
+16. In generics when will you use <E> and ?
+
+17. What is out in System.out.println()?
+
+18. What is Hashcode() method?
+
+19. Is it necessary to override Hashcode() and equals() at the same time>
+
+20. What is servlet and why do we need it?
